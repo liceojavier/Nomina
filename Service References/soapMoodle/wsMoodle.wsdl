@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthUser" type="tns:AuthUser" />
+      <s:complexType name="AuthUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetActivities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CourseId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActivitiesResult" type="tns:ArrayOfActivity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfActivity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="activity" nillable="true" type="tns:activity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="activity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="courseid" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="course_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="moduleId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="module_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="instance" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="instance_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_add" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="visible" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetActivitiesGrade">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CourseId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ItemModule" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InstanceId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitiesGradeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActivitiesGradeResult" type="tns:ArrayOfGrade" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGrade">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="grade" nillable="true" type="tns:grade" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="grade">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="itemid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="courseid" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemtype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemmodule" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="instanceid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="grademax" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="grademin" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="idnumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="rawgrade" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="finalgrade" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="feedback" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="timecreated" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="timemodified" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="aggregationstatus" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStudentsFromCourse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CourseId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentsFromCourseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentsFromCourseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitiesFromCourseAndUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="categoryId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitiesFromCourseAndUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActivitiesFromCourseAndUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCourseByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCourseByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCourseByUserIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldAuthUser">
+    <wsdl:part name="AuthUser" element="tns:AuthUser" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActivities" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesAuthUser">
+    <wsdl:part name="AuthUser" element="tns:AuthUser" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesGradeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActivitiesGrade" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesGradeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivitiesGradeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesGradeAuthUser">
+    <wsdl:part name="AuthUser" element="tns:AuthUser" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentsFromCourseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentsFromCourse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentsFromCourseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentsFromCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentsFromCourseAuthUser">
+    <wsdl:part name="AuthUser" element="tns:AuthUser" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesFromCourseAndUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActivitiesFromCourseAndUser" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesFromCourseAndUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivitiesFromCourseAndUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesFromCourseAndUserAuthUser">
+    <wsdl:part name="AuthUser" element="tns:AuthUser" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCourseByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCourseByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseByUserIdAuthUser">
+    <wsdl:part name="AuthUser" element="tns:AuthUser" />
+  </wsdl:message>
+  <wsdl:portType name="wsMoodleSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <wsdl:input message="tns:GetActivitiesSoapIn" />
+      <wsdl:output message="tns:GetActivitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesGrade">
+      <wsdl:input message="tns:GetActivitiesGradeSoapIn" />
+      <wsdl:output message="tns:GetActivitiesGradeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsFromCourse">
+      <wsdl:input message="tns:GetStudentsFromCourseSoapIn" />
+      <wsdl:output message="tns:GetStudentsFromCourseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesFromCourseAndUser">
+      <wsdl:input message="tns:GetActivitiesFromCourseAndUserSoapIn" />
+      <wsdl:output message="tns:GetActivitiesFromCourseAndUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseByUserId">
+      <wsdl:input message="tns:GetCourseByUserIdSoapIn" />
+      <wsdl:output message="tns:GetCourseByUserIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsMoodleSoap" type="tns:wsMoodleSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:HelloWorldAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <soap:operation soapAction="http://tempuri.org/GetActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActivitiesAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesGrade">
+      <soap:operation soapAction="http://tempuri.org/GetActivitiesGrade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActivitiesGradeAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsFromCourse">
+      <soap:operation soapAction="http://tempuri.org/GetStudentsFromCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStudentsFromCourseAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesFromCourseAndUser">
+      <soap:operation soapAction="http://tempuri.org/GetActivitiesFromCourseAndUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActivitiesFromCourseAndUserAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetCourseByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCourseByUserIdAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsMoodleSoap12" type="tns:wsMoodleSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:HelloWorldAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <soap12:operation soapAction="http://tempuri.org/GetActivities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActivitiesAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesGrade">
+      <soap12:operation soapAction="http://tempuri.org/GetActivitiesGrade" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActivitiesGradeAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsFromCourse">
+      <soap12:operation soapAction="http://tempuri.org/GetStudentsFromCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStudentsFromCourseAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesFromCourseAndUser">
+      <soap12:operation soapAction="http://tempuri.org/GetActivitiesFromCourseAndUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActivitiesFromCourseAndUserAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetCourseByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCourseByUserIdAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsMoodle">
+    <wsdl:port name="wsMoodleSoap" binding="tns:wsMoodleSoap">
+      <soap:address location="https://sistema.liceojavier.edu.gt/servicios/wsMoodle.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsMoodleSoap12" binding="tns:wsMoodleSoap12">
+      <soap12:address location="https://sistema.liceojavier.edu.gt/servicios/wsMoodle.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

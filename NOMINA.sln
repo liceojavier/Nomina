@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NOMINA", "NOMINA.vbproj", "{0AF3D5CD-0532-4D3A-A6BA-FD7FC0540042}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupNomina", "..\SetupNomina\SetupNomina.vdproj", "{3A047265-C48E-48D9-855C-8B3E8963EBFD}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ControlesERP", "..\..\ControlesERP\ControlesERP\ControlesERP.vbproj", "{93E69096-83DA-486F-A5E7-B026887101C9}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ControllersERP", "..\..\ControllersERP\ControllersERP\ControllersERP.vbproj", "{214A5D49-1A95-40AE-90DA-EC4BBF3DE9CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AF3D5CD-0532-4D3A-A6BA-FD7FC0540042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AF3D5CD-0532-4D3A-A6BA-FD7FC0540042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AF3D5CD-0532-4D3A-A6BA-FD7FC0540042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AF3D5CD-0532-4D3A-A6BA-FD7FC0540042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A047265-C48E-48D9-855C-8B3E8963EBFD}.Debug|Any CPU.ActiveCfg = Debug
+		{3A047265-C48E-48D9-855C-8B3E8963EBFD}.Release|Any CPU.ActiveCfg = Release
+		{93E69096-83DA-486F-A5E7-B026887101C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E69096-83DA-486F-A5E7-B026887101C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E69096-83DA-486F-A5E7-B026887101C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E69096-83DA-486F-A5E7-B026887101C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{214A5D49-1A95-40AE-90DA-EC4BBF3DE9CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{214A5D49-1A95-40AE-90DA-EC4BBF3DE9CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{214A5D49-1A95-40AE-90DA-EC4BBF3DE9CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{214A5D49-1A95-40AE-90DA-EC4BBF3DE9CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

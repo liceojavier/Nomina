@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsReportes" targetNamespace="http://tempuri.org/DsReportes.xsd" xmlns:mstns="http://tempuri.org/DsReportes.xsd" xmlns="http://tempuri.org/DsReportes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="javierConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="javierConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NOMINA.My.MySettings.GlobalReference.Default.javierConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_FiniquitoTableAdapter" GeneratorDataComponentClassName="v_FiniquitoTableAdapter" Name="v_Finiquito" UserDataComponentName="v_FiniquitoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="javierConnectionString1 (MySettings)" DbObjectName="javier.dbo.v_Finiquito" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from v_Finiquito</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombre_empresa" DataSetColumn="nombre_empresa" />
+              <Mapping SourceColumn="sucursal" DataSetColumn="sucursal" />
+              <Mapping SourceColumn="nombre_empleado" DataSetColumn="nombre_empleado" />
+              <Mapping SourceColumn="empleado" DataSetColumn="empleado" />
+              <Mapping SourceColumn="contrato" DataSetColumn="contrato" />
+              <Mapping SourceColumn="fechai" DataSetColumn="fechai" />
+              <Mapping SourceColumn="fechaf" DataSetColumn="fechaf" />
+              <Mapping SourceColumn="nombre_puesto" DataSetColumn="nombre_puesto" />
+              <Mapping SourceColumn="motivo" DataSetColumn="motivo" />
+              <Mapping SourceColumn="salario_mensual" DataSetColumn="salario_mensual" />
+              <Mapping SourceColumn="moneda" DataSetColumn="moneda" />
+              <Mapping SourceColumn="fechaiVaca" DataSetColumn="fechaiVaca" />
+              <Mapping SourceColumn="fechaiAgui" DataSetColumn="fechaiAgui" />
+              <Mapping SourceColumn="fechaiBono" DataSetColumn="fechaiBono" />
+              <Mapping SourceColumn="fecha_finiquito" DataSetColumn="fecha_finiquito" />
+              <Mapping SourceColumn="dpi_empleado" DataSetColumn="dpi_empleado" />
+              <Mapping SourceColumn="sueldoInd" DataSetColumn="sueldoInd" />
+              <Mapping SourceColumn="DocAgui" DataSetColumn="DocAgui" />
+              <Mapping SourceColumn="DocBono" DataSetColumn="DocBono" />
+              <Mapping SourceColumn="valorIndem" DataSetColumn="valorIndem" />
+              <Mapping SourceColumn="valorVaca" DataSetColumn="valorVaca" />
+              <Mapping SourceColumn="valorAgui" DataSetColumn="valorAgui" />
+              <Mapping SourceColumn="valorBono" DataSetColumn="valorBono" />
+              <Mapping SourceColumn="nombre_gestionrhh" DataSetColumn="nombre_gestionrhh" />
+              <Mapping SourceColumn="nombre_directorf" DataSetColumn="nombre_directorf" />
+              <Mapping SourceColumn="transac" DataSetColumn="transac" />
+              <Mapping SourceColumn="tipo_movimiento" DataSetColumn="tipo_movimiento" />
+              <Mapping SourceColumn="valor_transac" DataSetColumn="valor_transac" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsReportes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsReportes" msprop:Generator_UserDSName="DsReportes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="v_Finiquito" msprop:Generator_TableClassName="v_FiniquitoDataTable" msprop:Generator_TableVarName="tablev_Finiquito" msprop:Generator_TablePropName="v_Finiquito" msprop:Generator_RowDeletingName="v_FiniquitoRowDeleting" msprop:Generator_RowChangingName="v_FiniquitoRowChanging" msprop:Generator_RowEvHandlerName="v_FiniquitoRowChangeEventHandler" msprop:Generator_RowDeletedName="v_FiniquitoRowDeleted" msprop:Generator_UserTableName="v_Finiquito" msprop:Generator_RowChangedName="v_FiniquitoRowChanged" msprop:Generator_RowEvArgName="v_FiniquitoRowChangeEvent" msprop:Generator_RowClassName="v_FiniquitoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre_empresa" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnombre_empresa" msprop:Generator_ColumnPropNameInRow="nombre_empresa" msprop:Generator_ColumnPropNameInTable="nombre_empresaColumn" msprop:Generator_UserColumnName="nombre_empresa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sucursal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsucursal" msprop:Generator_ColumnPropNameInRow="sucursal" msprop:Generator_ColumnPropNameInTable="sucursalColumn" msprop:Generator_UserColumnName="sucursal" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_empleado" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnombre_empleado" msprop:Generator_ColumnPropNameInRow="nombre_empleado" msprop:Generator_ColumnPropNameInTable="nombre_empleadoColumn" msprop:Generator_UserColumnName="nombre_empleado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="empleado" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnempleado" msprop:Generator_ColumnPropNameInRow="empleado" msprop:Generator_ColumnPropNameInTable="empleadoColumn" msprop:Generator_UserColumnName="empleado" type="xs:int" minOccurs="0" />
+              <xs:element name="contrato" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncontrato" msprop:Generator_ColumnPropNameInRow="contrato" msprop:Generator_ColumnPropNameInTable="contratoColumn" msprop:Generator_UserColumnName="contrato" type="xs:int" minOccurs="0" />
+              <xs:element name="fechai" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfechai" msprop:Generator_ColumnPropNameInRow="fechai" msprop:Generator_ColumnPropNameInTable="fechaiColumn" msprop:Generator_UserColumnName="fechai" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fechaf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfechaf" msprop:Generator_ColumnPropNameInRow="fechaf" msprop:Generator_ColumnPropNameInTable="fechafColumn" msprop:Generator_UserColumnName="fechaf" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="nombre_puesto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnombre_puesto" msprop:Generator_ColumnPropNameInRow="nombre_puesto" msprop:Generator_ColumnPropNameInTable="nombre_puestoColumn" msprop:Generator_UserColumnName="nombre_puesto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="motivo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnmotivo" msprop:Generator_ColumnPropNameInRow="motivo" msprop:Generator_ColumnPropNameInTable="motivoColumn" msprop:Generator_UserColumnName="motivo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="salario_mensual" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsalario_mensual" msprop:Generator_ColumnPropNameInRow="salario_mensual" msprop:Generator_ColumnPropNameInTable="salario_mensualColumn" msprop:Generator_UserColumnName="salario_mensual" type="xs:decimal" minOccurs="0" />
+              <xs:element name="moneda" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnmoneda" msprop:Generator_ColumnPropNameInRow="moneda" msprop:Generator_ColumnPropNameInTable="monedaColumn" msprop:Generator_UserColumnName="moneda" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fechaiVaca" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfechaiVaca" msprop:Generator_ColumnPropNameInRow="fechaiVaca" msprop:Generator_ColumnPropNameInTable="fechaiVacaColumn" msprop:Generator_UserColumnName="fechaiVaca" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fechaiAgui" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfechaiAgui" msprop:Generator_ColumnPropNameInRow="fechaiAgui" msprop:Generator_ColumnPropNameInTable="fechaiAguiColumn" msprop:Generator_UserColumnName="fechaiAgui" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fechaiBono" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfechaiBono" msprop:Generator_ColumnPropNameInRow="fechaiBono" msprop:Generator_ColumnPropNameInTable="fechaiBonoColumn" msprop:Generator_UserColumnName="fechaiBono" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_finiquito" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfecha_finiquito" msprop:Generator_ColumnPropNameInRow="fecha_finiquito" msprop:Generator_ColumnPropNameInTable="fecha_finiquitoColumn" msprop:Generator_UserColumnName="fecha_finiquito" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dpi_empleado" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndpi_empleado" msprop:Generator_ColumnPropNameInRow="dpi_empleado" msprop:Generator_ColumnPropNameInTable="dpi_empleadoColumn" msprop:Generator_UserColumnName="dpi_empleado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sueldoInd" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsueldoInd" msprop:Generator_ColumnPropNameInRow="sueldoInd" msprop:Generator_ColumnPropNameInTable="sueldoIndColumn" msprop:Generator_UserColumnName="sueldoInd" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DocAgui" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDocAgui" msprop:Generator_ColumnPropNameInRow="DocAgui" msprop:Generator_ColumnPropNameInTable="DocAguiColumn" msprop:Generator_UserColumnName="DocAgui" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DocBono" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDocBono" msprop:Generator_ColumnPropNameInRow="DocBono" msprop:Generator_ColumnPropNameInTable="DocBonoColumn" msprop:Generator_UserColumnName="DocBono" type="xs:decimal" minOccurs="0" />
+              <xs:element name="valorIndem" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnvalorIndem" msprop:Generator_ColumnPropNameInRow="valorIndem" msprop:Generator_ColumnPropNameInTable="valorIndemColumn" msprop:Generator_UserColumnName="valorIndem" type="xs:decimal" minOccurs="0" />
+              <xs:element name="valorVaca" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnvalorVaca" msprop:Generator_ColumnPropNameInRow="valorVaca" msprop:Generator_ColumnPropNameInTable="valorVacaColumn" msprop:Generator_UserColumnName="valorVaca" type="xs:decimal" minOccurs="0" />
+              <xs:element name="valorAgui" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnvalorAgui" msprop:Generator_ColumnPropNameInRow="valorAgui" msprop:Generator_ColumnPropNameInTable="valorAguiColumn" msprop:Generator_UserColumnName="valorAgui" type="xs:decimal" minOccurs="0" />
+              <xs:element name="valorBono" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnvalorBono" msprop:Generator_ColumnPropNameInRow="valorBono" msprop:Generator_ColumnPropNameInTable="valorBonoColumn" msprop:Generator_UserColumnName="valorBono" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nombre_gestionrhh" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnombre_gestionrhh" msprop:Generator_ColumnPropNameInRow="nombre_gestionrhh" msprop:Generator_ColumnPropNameInTable="nombre_gestionrhhColumn" msprop:Generator_UserColumnName="nombre_gestionrhh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_directorf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnombre_directorf" msprop:Generator_ColumnPropNameInRow="nombre_directorf" msprop:Generator_ColumnPropNameInTable="nombre_directorfColumn" msprop:Generator_UserColumnName="nombre_directorf" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="transac" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntransac" msprop:Generator_ColumnPropNameInRow="transac" msprop:Generator_ColumnPropNameInTable="transacColumn" msprop:Generator_UserColumnName="transac" type="xs:int" minOccurs="0" />
+              <xs:element name="tipo_movimiento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntipo_movimiento" msprop:Generator_ColumnPropNameInRow="tipo_movimiento" msprop:Generator_ColumnPropNameInTable="tipo_movimientoColumn" msprop:Generator_UserColumnName="tipo_movimiento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="valor_transac" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnvalor_transac" msprop:Generator_ColumnPropNameInRow="valor_transac" msprop:Generator_ColumnPropNameInTable="valor_transacColumn" msprop:Generator_UserColumnName="valor_transac" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

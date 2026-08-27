@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="academiaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="academiaModelStoreContainer">
+          <EntitySet Name="evaluatest1" EntityType="academiaModel.Store.evaluatest1" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="evaluatest2" EntityType="academiaModel.Store.evaluatest2" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <AssociationSet Name="FK_evaluatest2_evaluatest1" Association="academiaModel.Store.FK_evaluatest2_evaluatest1">
+            <End Role="evaluatest1" EntitySet="evaluatest1" />
+            <End Role="evaluatest2" EntitySet="evaluatest2" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="evaluatest1">
+          <Key>
+            <PropertyRef Name="numtest" />
+          </Key>
+          <Property Name="empresa" Type="smallint" />
+          <Property Name="ciclo" Type="smallint" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="tipotest" Type="smallint" />
+          <Property Name="numtest" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="empleado" Type="int" />
+          <Property Name="contrato" Type="int" />
+          <Property Name="codigo" Type="smallint" />
+          <Property Name="unidad" Type="smallint" />
+          <Property Name="estado" Type="smallint" />
+          <Property Name="fechae" Type="datetime" />
+          <Property Name="emevaluador" Type="int" />
+          <Property Name="conevaluador" Type="int" />
+          <Property Name="observa" Type="ntext" />
+        </EntityType>
+        <EntityType Name="evaluatest2">
+          <Key>
+            <PropertyRef Name="empresa" />
+            <PropertyRef Name="ciclo" />
+            <PropertyRef Name="tipotest" />
+            <PropertyRef Name="numtest" />
+            <PropertyRef Name="numpregunta" />
+          </Key>
+          <Property Name="empresa" Type="smallint" Nullable="false" />
+          <Property Name="ciclo" Type="smallint" Nullable="false" />
+          <Property Name="tipotest" Type="smallint" Nullable="false" />
+          <Property Name="numtest" Type="int" Nullable="false" />
+          <Property Name="area" Type="smallint" />
+          <Property Name="numpregunta" Type="smallint" Nullable="false" />
+          <Property Name="numopcion" Type="smallint" />
+        </EntityType>
+        <Association Name="FK_evaluatest2_evaluatest1">
+          <End Role="evaluatest1" Type="academiaModel.Store.evaluatest1" Multiplicity="1" />
+          <End Role="evaluatest2" Type="academiaModel.Store.evaluatest2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="evaluatest1">
+              <PropertyRef Name="numtest" />
+            </Principal>
+            <Dependent Role="evaluatest2">
+              <PropertyRef Name="numtest" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="academiaModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="academiaEntities">
+          <EntitySet Name="evaluatest1" EntityType="academiaModel.evaluatest1" />
+          <EntitySet Name="evaluatest2" EntityType="academiaModel.evaluatest2" />
+          <AssociationSet Name="FK_evaluatest2_evaluatest1" Association="academiaModel.FK_evaluatest2_evaluatest1">
+            <End Role="evaluatest1" EntitySet="evaluatest1" />
+            <End Role="evaluatest2" EntitySet="evaluatest2" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="evaluatest1">
+          <Key>
+            <PropertyRef Name="numtest" />
+          </Key>
+          <Property Name="empresa" Type="Int16" />
+          <Property Name="ciclo" Type="Int16" />
+          <Property Name="fecha" Type="DateTime" />
+          <Property Name="tipotest" Type="Int16" />
+          <Property Name="numtest" Type="Int32" Nullable="false" />
+          <Property Name="empleado" Type="Int32" />
+          <Property Name="contrato" Type="Int32" />
+          <Property Name="codigo" Type="Int16" />
+          <Property Name="unidad" Type="Int16" />
+          <Property Name="estado" Type="Int16" />
+          <Property Name="fechae" Type="DateTime" />
+          <Property Name="emevaluador" Type="Int32" />
+          <Property Name="conevaluador" Type="Int32" />
+          <Property Name="observa" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="evaluatest2" Relationship="academiaModel.FK_evaluatest2_evaluatest1" FromRole="evaluatest1" ToRole="evaluatest2" />
+        </EntityType>
+        <EntityType Name="evaluatest2">
+          <Key>
+            <PropertyRef Name="empresa" />
+            <PropertyRef Name="ciclo" />
+            <PropertyRef Name="tipotest" />
+            <PropertyRef Name="numtest" />
+            <PropertyRef Name="numpregunta" />
+          </Key>
+          <Property Name="empresa" Type="Int16" Nullable="false" />
+          <Property Name="ciclo" Type="Int16" Nullable="false" />
+          <Property Name="tipotest" Type="Int16" Nullable="false" />
+          <Property Name="numtest" Type="Int32" Nullable="false" />
+          <Property Name="area" Type="Int16" />
+          <Property Name="numpregunta" Type="Int16" Nullable="false" />
+          <Property Name="numopcion" Type="Int16" />
+          <NavigationProperty Name="evaluatest1" Relationship="academiaModel.FK_evaluatest2_evaluatest1" FromRole="evaluatest2" ToRole="evaluatest1" />
+        </EntityType>
+        <Association Name="FK_evaluatest2_evaluatest1">
+          <End Role="evaluatest1" Type="academiaModel.evaluatest1" Multiplicity="1" />
+          <End Role="evaluatest2" Type="academiaModel.evaluatest2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="evaluatest1">
+              <PropertyRef Name="numtest" />
+            </Principal>
+            <Dependent Role="evaluatest2">
+              <PropertyRef Name="numtest" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="academiaModelStoreContainer" CdmEntityContainer="academiaEntities">
+          <EntitySetMapping Name="evaluatest1">
+            <EntityTypeMapping TypeName="IsTypeOf(academiaModel.evaluatest1)">
+              <MappingFragment StoreEntitySet="evaluatest1">
+                <ScalarProperty Name="empresa" ColumnName="empresa" />
+                <ScalarProperty Name="ciclo" ColumnName="ciclo" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="tipotest" ColumnName="tipotest" />
+                <ScalarProperty Name="numtest" ColumnName="numtest" />
+                <ScalarProperty Name="empleado" ColumnName="empleado" />
+                <ScalarProperty Name="contrato" ColumnName="contrato" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="unidad" ColumnName="unidad" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="fechae" ColumnName="fechae" />
+                <ScalarProperty Name="emevaluador" ColumnName="emevaluador" />
+                <ScalarProperty Name="conevaluador" ColumnName="conevaluador" />
+                <ScalarProperty Name="observa" ColumnName="observa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="evaluatest2">
+            <EntityTypeMapping TypeName="IsTypeOf(academiaModel.evaluatest2)">
+              <MappingFragment StoreEntitySet="evaluatest2">
+                <ScalarProperty Name="empresa" ColumnName="empresa" />
+                <ScalarProperty Name="ciclo" ColumnName="ciclo" />
+                <ScalarProperty Name="tipotest" ColumnName="tipotest" />
+                <ScalarProperty Name="numtest" ColumnName="numtest" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="numpregunta" ColumnName="numpregunta" />
+                <ScalarProperty Name="numopcion" ColumnName="numopcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_evaluatest2_evaluatest1" TypeName="academiaModel.FK_evaluatest2_evaluatest1" StoreEntitySet="evaluatest2">
+            <EndProperty Name="evaluatest1">
+              <ScalarProperty Name="numtest" ColumnName="numtest" />
+            </EndProperty>
+            <EndProperty Name="evaluatest2">
+              <ScalarProperty Name="empresa" ColumnName="empresa" />
+              <ScalarProperty Name="ciclo" ColumnName="ciclo" />
+              <ScalarProperty Name="tipotest" ColumnName="tipotest" />
+              <ScalarProperty Name="numtest" ColumnName="numtest" />
+              <ScalarProperty Name="numpregunta" ColumnName="numpregunta" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="ModelJavier" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <EntityTypeShape EntityType="academiaModel.evaluatest1" Width="1.5" PointX="0.75" PointY="1" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="academiaModel.evaluatest2" Width="1.5" PointX="3" PointY="1.75" Height="2.5571907552083335" IsExpanded="true" />
+        <AssociationConnector Association="academiaModel.FK_evaluatest2_evaluatest1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.0285953776041667" />
+          <ConnectorPoint PointX="3" PointY="3.0285953776041667" /></AssociationConnector></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
