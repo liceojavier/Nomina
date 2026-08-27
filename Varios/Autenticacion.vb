@@ -21,7 +21,7 @@ Public Class Autenticacion
     Dim cadena As String
     Dim veces As Int16 = 0
     Dim fP As MenuM
-    Dim nombre_grupo_verificacion = "nominas"
+    Dim nombre_grupo_verificacion = "nomina"
     Dim autenticacion As New LdapAuthentication("LDAP://192.168.10.100")
 
     Dim tbRoles As New DataTable("roles")
