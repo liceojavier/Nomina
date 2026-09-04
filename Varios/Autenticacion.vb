@@ -437,6 +437,21 @@ Public Class Autenticacion
                 Try
                     CodigoEmpleado = CInt(departamento)
 
+                    cadena = "select ps.id_rol,nombre, emp.nombre1 + ' ' + emp.apellido1 as nombre_empleado from permiso_siaco ps " &
+                    "INNER JOIN rol_siaco rs ON ps.id_rol=rs.id_rol and idtipomodulo=9 " &
+                    "INNER JOIN emplegen emp ON emp.empleado=ps.id_empleado and emp.empresa=ps.empresa " &
+                    "WHERE ps.empresa=" & empresa & " and id_empleado = " & CodigoEmpleado
+                    If llenaTabla(cadena, tbRoles) Then
+                        IdRol = tbRoles.Rows(0).Item("id_rol")
+                        _rol_nombre = tbRoles.Rows(0).Item("nombre")
+                        _usuario_nombre = tbRoles.Rows(0).Item("nombre_empleado")
+                    Else
+                        IdRol = 0
+                        MsgBox("Usuario no posee un rol asignado".ToUpper, MsgBoxStyle.Critical, "Mensaje del Sistema")
+                        Exit Sub
+                    End If
+
+
                 Catch ex As Exception
 
                     MsgBox("NÚMERO DE EMPLEADO ASIGNADO DE FORMA INCORRECTA EN EL DIRECTORIO" & vbNewLine & "PÓNGASE EN CONTACTO CON EL ADMINISTRADOR", MsgBoxStyle.Critical, "Mensaje del Sistema")

@@ -4429,6 +4429,7 @@
     <None Include="Resources\fondo rojo1.jpg" />
     <None Include="Resources\color-azul.jpg" />
     <None Include="Resources\color-azul-1080p.jpg" />
+    <None Include="Resources\color-azul-1080p1.jpg" />
     <Content Include="Resources\fondo rosa.png" />
     <Content Include="Resources\logo_vision.png" />
     <Content Include="Resources\nominas2ico.ico" />
